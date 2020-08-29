@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<TITLE> Music Player </TITLE>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<STYLE>
+body
+{
+ background-color: #FFA07A;
+ font-size : 20px;
+ font-family: 'Montaga', serif;
+ color : BLACK;
+}
+.wish{
+ float: left;
+ height : 100%;
+  width : 25% ;
+  margin-left : 20px;
+}
+.music { 
+  height: 95vh; 
+  display: flex; 
+  align-items: center; 
+  flex-direction: column; 
+  justify-content: center; 
+  width: 50%;
+  text-align: center;
+   margin-top: 10px ;
+} 
+.form-inline {
+ text-align : right;
+}
+.list {
+ float : right;
+ height : 100%;
+}
+.content {
+ text-align: center;
+  height: 250px; 
+  width: 250px; 
+  background-image : url("abc.jpg");
+  background-size: cover; 
+  background-position: center; 
+  border-radius: 15%; 
+   margin-top : 5px;
+}
+.details { 
+  display: flex; 
+  align-items: center; 
+  flex-direction: column; 
+  color: black;   
+} 
+.buttons { 
+  display: flex; 
+  flex-direction: row; 
+  align-items: center;
+ color: black;  
+} 
+  .playpause-track, 
+.prev-track, 
+.next-track { 
+  padding: 25px; 
+  opacity: 0.8; 
+  color: black; 
+  /* Smoothly transition the opacity */
+  transition: opacity .2s; 
+} 
+  
+/* Change the opacity when mouse is hovered */
+.playpause-track:hover, 
+.prev-track:hover, 
+.next-track:hover { 
+  opacity: 1.0; 
+  color: black; 
+} 
+  
+/* Define the slider width so that it scales properly */
+.slider_container { 
+  width: 75%; 
+  max-width: 400px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+   color: black; 
+} 
+  
+/* Modify the appearance of the slider */
+.seek_slider, .volume_slider { 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  appearance: none; 
+  height: 5px; 
+  background: black; 
+  opacity: 0.7; 
+  -webkit-transition: .2s; 
+  transition: opacity .2s; 
+}
+/* Modify the appearance of the slider thumb */
+.seek_slider::-webkit-slider-thumb, 
+.volume_slider::-webkit-slider-thumb { 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  appearance: none; 
+  width: 15px; 
+  height: 15px; 
+  background: white; 
+  cursor: pointer; 
+  border-radius: 50%; 
+} 
+  
+/* Change the opacity when mouse is hovered */
+.seek_slider:hover, 
+.volume_slider:hover { 
+  opacity: 1.0; 
+} 
+  
+.seek_slider { 
+  width: 60%; 
+} 
+  
+.volume_slider { 
+  width: 30%; 
+} 
+  
+.current-time, 
+.total-duration { 
+  padding: 10px; 
+} 
+  
+i.fa-volume-down, 
+i.fa-volume-up { 
+  padding: 10px; 
+} 
+ .display {
+  border : 1px solid black;
+  width : 25%;
+  height : 100%;
+ }
+/* Change the mouse cursor to a pointer 
+   when hovered over */
+i.fa-play-circle, 
+i.fa-pause-circle, 
+i.fa-step-forward, 
+i.fa-step-backward { 
+  cursor: pointer; 
+} 
+
+</STYLE>
+</HEAD>
+<BODY> 
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<a class="navbar-brand" href="Music player.html"> <img  src="logo.png"  class="rounded-circle"></a>
+<ul class="navbar-nav">
+<li class="navbar-item"> <a class="nav-link text-light" href="log.html"><b> Log in </b> </a> </li>
+<li class="navbar-item"> <a class="nav-link text-light" href="sign.html"><b>Sign Up </b> </a> </li> 
+</ul>
+<form class="form-inline" style="height: 22px;margin-left:800px;">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search" id="value">
+    <button class="btn btn-primary" type="submit" id="search">Search</button>
+  </form>
+</nav>
+<div cols="30% 50% 20%">
+<div class="wish rightdiv"><br>
+<h3 class="font-weight-bolder"> YOUR WISHLIST </h3>
+<br>
+<table class="table table-borderless">
+<tr> <td> <img src="t1.jpg"><br> Most Favourite </td>
+  <td> <img src="t4.jpg"><br> Latest Songs </td>
+</tr>
+<tr> <td> <img src="t5.jpg"> <br> Punjabi Songs</td>
+  <td> <img src="t2.jpg"> <br> Hollywood Songs</td>
+</tr>
+</table>
+</div>
+<div class="music middlediv">
+<div class="details">
+<div class="now_playing"> CURRENTLY PLAYING </div><br>
+<div class="content"> </div>
+<div class="name"> Track NAME </div>
+<div class="artist"> Artist Name </div>
+</div>
+<div class="buttons"> 
+      <div class="prev-track" onclick="prevTrack()"> 
+        <i class="fa fa-step-backward fa-2x"></i> 
+      </div> 
+      <div class="playpause-track" onclick="playpauseTrack()"> 
+        <i class="fa fa-play-circle fa-5x"></i> 
+      </div> 
+      <div class="next-track" onclick="nextTrack()"> 
+        <i class="fa fa-step-forward fa-2x"></i> 
+      </div> 
+    </div> 
+<div class="slider_container"> 
+      <div class="current-time">00:00</div> 
+      <input type="range" min="1" max="100"
+        value="0" class="seek_slider" onchange="seekTo()"> 
+      <div class="total-duration">00:00</div> 
+    </div> 
+  <div class="slider_container"> 
+      <i class="fa fa-volume-down"></i> 
+      <input type="range" min="1" max="100"
+        value="99" class="volume_slider" onchange="setVolume()"> 
+      <i class="fa fa-volume-up"></i> 
+    </div> 
+  </div> 
+</div>
+<script src="script.js"> </script>
+</BODY>
+</HTML>
