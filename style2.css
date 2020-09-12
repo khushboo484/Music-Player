@@ -1,0 +1,16 @@
+Body {
+    background-color : Black;
+    background-image : url("imgs/bg3.jpg");
+    background-repeat : no-repeat;
+    background-position: center;
+    text-align : right;
+    height : 80%;
+     width: 100%;
+    color: #FFF8DC;
+   font-family: 'Comfortaa', cursive;
+    font-size : 20px;
+   }
+   h1 {
+    text-align : right;
+    color : #F5F5DC ;
+   }

@@ -26,25 +26,25 @@ let track_list = [
 { 
 	name: "Shayad", 
 	artist: "Pritam , Arijit Singh", 
-	image: "shayad.jpg", 
+	image: "imgs/shayad.jpg", 
 	path: "Shayad ...MP3"
 }, 
 { 
 	name: "Illegal Weapon 2.0", 
 	artist: "Jasmine Sandles , Garry Sandhu", 
-	image: "illegal.jpg", 
+	image: "imgs/illegal.jpg", 
 	path: "Illegal Weapon 2.0.MP3"
 }, 
 { 
 	name: "Lagdi Lahore Di", 
 	artist: "Guru Randhawa , Tulsi Kumar", 
-	image: "lagdi.jpg", 
+	image: "imgs/lagdi.jpg", 
 	path: "Lagdi Lahore Di.MP3", 
 }, 
 { 
 	name: "Tu Hi Yaar Mera", 
 	artist: "Rochak Kohli, Arijit Singh , Neha Kakkar", 
-	image: "yaar.jpg", 
+	image: "imgs/yaar.jpg", 
 	path: "Tu Hi Yaar Mera.MP3", 
 },
 ];
@@ -198,4 +198,3 @@ if (!isNaN(curr_track.duration)) {
 	total_duration.textContent = durationMinutes + ":" + durationSeconds; 
 } 
 } 
- 
